@@ -6,7 +6,7 @@
 
 int main(void)
 {
-	FILE* file = fopen("4.571m8h_20171011_gps.txt", "r");
+	FILE* file = fopen("textname.txt", "r");
 	char line[256];   //save a line
 	char str[20];    //save the second list
 	int i = 0, j;
@@ -28,7 +28,7 @@ int main(void)
 		float y;
 		y = atof(str);     //change to float
 		float a[NUM];
-		if (i < NUM) {   //加上粗大误差处理函数（条件改为i<+100）
+		if (i < NUM) {
 			a[i] = y;
 			printf("a[%d] = %f\n",i,a[i]);
 			FILE *fpWrite = fopen("data.txt", "a+");
@@ -39,7 +39,7 @@ int main(void)
 		p_last = 1.0;
 		}
 		else {
-			for (j=0;j<NUM-1;j++)   //加上
+			for (j=0;j<NUM-1;j++) 
 				a[j] = a[j+1];    //add a number in the end and wipe the first number
 			a[NUM-1] = y;
 			
