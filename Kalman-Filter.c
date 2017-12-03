@@ -53,11 +53,11 @@ int main(void)
 			float p_mid;
 			float p_now;
 			//time update 
-			x_mid = x_last;      //x_mid=x(k|k-1), x_last=x(k-1|k-1), X(k|k-1) = AX(k-1|k-1) + BU(k) + W(k),A=1,BU(k) = 0
-			p_mid = p_last + Q;  //p_mid=p(k|k-1), p_last=p(k-1|k-1), P(k|k-1) = AP(k-1|k-1)A + Q(k) ,A=1
+			x_mid = x_last;      //x_mid=x(k|k-1), x_last=x(k-1|k-1), X(k|k-1) = AX(k-1|k-1) + BU(k) + W(k), A=1, BU(k) = 0
+			p_mid = p_last + Q;  //p_mid=p(k|k-1), p_last=p(k-1|k-1), P(k|k-1) = AP(k-1|k-1)A + Q(k), A=1
 			//measurement update
-			kg = p_mid / (p_mid + R); //Kg(k)=P(k|k-1)H / [HP(k|k-1)H + R],H=1
-			x_now = x_mid + kg*(a[NUM-1] - x_mid); //X(k|k) = X(k|k-1) + Kg(k)[Z(k) - HX(k|k-1)], H=1,Z(k)=a[NUM-1]
+			kg = p_mid / (p_mid + R); //Kg(k)=P(k|k-1)H / [HP(k|k-1)H + R], H=1
+			x_now = x_mid + kg*(a[NUM-1] - x_mid); //X(k|k) = X(k|k-1) + Kg(k)[Z(k) - HX(k|k-1)], H=1, Z(k)=a[NUM-1]
 			p_now = (1 - kg)*p_mid;   //P(k|k) = (1 - Kg(k)H)P(k|k-1), H=1
 			//next round parameter update
 			x_last = x_now;
