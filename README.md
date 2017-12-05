@@ -1,4 +1,7 @@
-# Kalman-Filter
+# Kalman Filter & Gross_Error
+
+Kalman Filter
+
 Q = 1e-4; 
 
 R = 0.5; 
@@ -12,3 +15,10 @@ Kg(k)=P(k|k-1)H / (HP(k|k-1)H + R), H=1
 X(k|k) = X(k|k-1) + Kg(k)(Z(k) - HX(k|k-1)), H=1, Z(k): series
 
 P(k|k) = (1 - Kg(k)H)P(k|k-1), H=1
+
+
+Gross Error
+
+0~n: 3 sigma criterion & dixon criterion
+
+n~ : 3 sigma criterion
