@@ -6,7 +6,7 @@
 
 int main(void)
 {
-	FILE* file = fopen("10.691m8h_20171127_gps.txt", "r");
+	FILE* file = fopen("textname.txt", "r");
 	char line[256];   //save a line
 	char str[20];    //save the second list
 	int i = 0, j, k;
